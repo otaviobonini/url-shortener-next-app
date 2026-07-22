@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./context/AuthContext";
+import { UrlProvider } from "./context/UrlContext";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+// o Font Awesome injeta o próprio CSS por JS; desligamos porque já importamos
+// a folha acima — sem isso os ícones aparecem gigantes antes de encolher
+config.autoAddCss = false;
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +36,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+
+      <body className="min-h-screen flex flex-col"><AuthProvider><UrlProvider>{children}</UrlProvider></AuthProvider></body>
     </html>
   );
 }

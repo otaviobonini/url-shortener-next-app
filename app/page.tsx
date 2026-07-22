@@ -1,6 +1,7 @@
 import Link from "next/link";
-
-const API_URL = "https://url-api.otaviobonini.dev";
+import Footer from "./components/Footer";
+import Image from "next/image";
+import favicon from "./favicon.ico";
 
 const features = [
   {
@@ -18,7 +19,7 @@ const features = [
 ];
 
 export default function Home() {
-  return (
+  return (<>
     <main className="relative flex-1">
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-20"
@@ -36,8 +37,8 @@ export default function Home() {
       />
 
       <header className="relative z-10 mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-6">
-        <span className="text-sm font-bold tracking-tight md:text-xl">
-          Bonini Encurtador de URL
+        <span className="text-sm font-bold tracking-tight md:text-xl flex gap-4">
+         <Image className="h-8 w-8" src={favicon} alt="Favicon" width={24} height={24}></Image> Bonini Encurtador de URL
         </span>
         <nav className="flex items-center gap-2 text-sm">
           <Link
@@ -95,29 +96,9 @@ export default function Home() {
         ))}
       </section>
 
-      <footer className="relative z-10 border-t border-zinc-800">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-zinc-500 sm:flex-row">
-          <span>Otávio Bonini — Todos os direitos reservados</span>
-          <div className="flex items-center gap-4">
-            <a
-              href={`${API_URL}/docs`}
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-white"
-            >
-              Documentação da API
-            </a>
-            <a
-              href="https://github.com/otaviobonini/url-shortener-api"
-              target="_blank"
-              rel="noreferrer"
-              className="transition-colors hover:text-white"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </footer>
+      
     </main>
+    <Footer />
+    </>
   );
 }
