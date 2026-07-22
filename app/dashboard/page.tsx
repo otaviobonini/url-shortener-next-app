@@ -86,11 +86,12 @@ export default function Dashboard() {
           onClick={() => logout()}
           className="rounded-md px-3 py-1.5 text-sm text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
         >
-          Sair
+          Logout
         </button>
       </header>
-
+          <h1 className="text-lg font-medium text-center mb-4">Gere sua URL encurtada</h1>
       <form onSubmit={handleShorten} className="flex flex-col gap-2 sm:flex-row">
+        
         <input
           type="url"
           value={url}
@@ -129,8 +130,9 @@ export default function Dashboard() {
           <p className="text-sm text-red-400">{error}</p>
         </div>
       )}
-
-      <section className="mt-10">
+     
+      <section className="mt-24">
+         <h1 className="text-center mb-4 font-bold ">Seus links válidos</h1>
         {isLoading && !userUrls ? (
           <p className="text-sm text-zinc-500">Carregando seus links...</p>
         ) : !userUrls || userUrls.data.length === 0 ? (
