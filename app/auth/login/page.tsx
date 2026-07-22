@@ -42,7 +42,7 @@ export default function Login() {
                 id="email"
                 type="email"
                 autoComplete="email"
-                placeholder="seu@email.com"
+                placeholder="voce@email.com"
                 className="h-11 rounded-lg border border-zinc-800 bg-zinc-950 px-3.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-zinc-500"
               />
             </div>
