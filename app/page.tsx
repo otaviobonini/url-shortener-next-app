@@ -38,7 +38,7 @@ export default function Home() {
 
       <header className="relative z-10 mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-6">
         <span className="text-sm font-bold tracking-tight md:text-xl flex gap-4">
-         <Image className="h-8 w-8" src={favicon} alt="Favicon" width={24} height={24}></Image> Bonini Encurtador de URL
+         <Image className="h-8 w-8" src={favicon} alt="Favicon" width={24} height={24}></Image> <span className="hidden md:inline">Bonini Encurtador de URL</span>
         </span>
         <nav className="flex items-center gap-2 text-sm">
           <Link
@@ -70,11 +70,11 @@ export default function Home() {
             type="url"
             readOnly
             placeholder="https://cole-sua-url-longa-aqui.com"
-            className="h-11 flex-1 rounded-lg border border-zinc-800 bg-zinc-900 px-4 text-sm text-zinc-100 outline-none placeholder:text-zinc-500"
+            className="h-11 flex-1 rounded-lg border py-2 mb-2 border-zinc-800 bg-zinc-900 px-4 text-sm text-zinc-100 outline-none placeholder:text-zinc-500"
           />
           <Link
             href="/auth/register"
-            className="inline-flex h-11 items-center justify-center rounded-lg bg-white px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
+            className="inline-flex h-11 items-center justify-center rounded-lg bg-white px-5  text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-200"
           >
             Encurtar
           </Link>
